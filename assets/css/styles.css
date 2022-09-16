@@ -1,0 +1,156 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "filter filter filter"
+    "products products products"
+    "pages pages pages"
+    "footer footer footer";
+}
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.displayNone,
+.nav {
+  display: none;
+}
+.header {
+  grid-area: header;
+  justify-content: space-around;
+}
+.logo {
+  max-width: 50px;
+}
+.filter {
+  grid-area: filter;
+}
+
+.ico {
+  max-width: 22px;
+  margin: 1%;
+}
+
+.products {
+  grid-area: products;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 90%;
+  height: 90%;
+  object-fit: fill;
+}
+
+.displayNone,
+.nav {
+  display: none;
+}
+
+.pages {
+  grid-area: pages;
+}
+
+.pages p {
+  border: solid 1px black;
+  padding: 2%;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+@media (min-width: 576px) {
+  .container {
+    display: grid;
+    grid-template-areas:
+      "header header nav nav nav"
+      "filter products products products products"
+      ". products products products products "
+      "pages pages pages pages pages"
+      "footer footer footer footer footer";
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .displayNone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .filter {
+    flex-direction: column;
+    padding-top: 40%;
+  }
+  .products {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .product {
+    margin: 2% 0;
+  }
+  img {
+    max-width: 250px;
+    object-fit: fill;
+  }
+  .pages p {
+    padding: 1%;
+  }
+  .burger {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    background-color: #efefef;
+    display: grid;
+    grid-template-areas:
+      "header header nav nav nav"
+      "filter products products products products"
+      ". products products products products "
+      "pages pages pages pages pages"
+      "footer footer footer footer footer";
+    grid-template-columns: 0.5fr 1.3fr 1.3fr 1fr;
+  }
+  .header {
+    background-color: #004ba0;
+    justify-content: flex-start;
+    gap: 50px;
+  }
+  .nav {
+    background-color: #004ba0;
+    justify-content: space-around;
+    padding: 15px;
+  }
+  .logo {
+    max-width: 60px;
+  }
+  button {
+    background-color: #63a4ff;
+  }
+  .filter {
+    padding-top: 0%;
+  }
+
+  .products {
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .fotos {
+    width: 250px;
+    height: 250px;
+  }
+}
